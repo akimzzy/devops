@@ -10,9 +10,9 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-          echo 'Starting to build docker image'
+        echo 'Starting to build docker image'
 
-        app = docker.build("akimzzy/devops:v1.0.0")
+        app = docker.build("akimzzy/devops:${env.BUILD_ID}")
     }
 
     stage('Test image') {
