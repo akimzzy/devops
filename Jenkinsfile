@@ -12,10 +12,12 @@ node {
          * docker build on the command line */
         echo 'Starting to build docker image'
 
-        app = docker.build("akimzzy/devops:${env.BUILD_ID}")
+        app = docker.build("akimzzy/devops")
     }
 
     stage('Test image') {
+        echo 'Starting to Test image'
+
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
 
